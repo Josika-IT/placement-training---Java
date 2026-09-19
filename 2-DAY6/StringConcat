@@ -1,0 +1,23 @@
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int len= str.length(),cnt =0;
+        char ch[] = new char[len];
+        for(int ind=len-1;ind>=0;ind--){
+            char c=str.charAt(ind);
+            if(c==' '){
+                cnt = 0;
+                ch[ind]= ' ';
+            }else{
+                int sum =(int)c +cnt;
+                if((c>='A' && c<='Z'&&sum>90) || (c>='a' && c<='z' && sum>122))
+                sum-=26;
+                ch[ind]=(char)(sum);
+                cnt++;
+            }
+        }
+        System.out.println(String.valueOf(ch));
+    }
+}
