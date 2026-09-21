@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int R = sc.nextInt(), max = Integer.MIN_VALUE, pos = 0;
+		int C = sc.nextInt(), row, col;
+		int mat[][] = new int[R][C];
+		for(row=0;row<R;row++)
+		    for(col=0;col<C;col++)
+		        mat[row][col] = sc.nextInt();
+		for(row=0;row<R;row++) {
+		    int sum = 0;
+		    for(col=0;col<C;col++)
+		        sum += mat[row][col];
+		    if(max < sum) {
+		        max = sum;
+		        pos = row;
+		    }
+		}
+		System.out.print(pos);
+	}
+}
