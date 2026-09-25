@@ -1,0 +1,38 @@
+import java.util.*;
+
+class Student {
+    int rollNo, marks;
+    String name, phNo;
+    
+    Student(int rollNo, String name, String phNo, int marks) {
+        this.rollNo = rollNo;
+        this.name = name;
+        this.phNo = phNo;
+        this.marks = marks;
+    }
+    
+    public String toString() {
+        return rollNo + " " + name + " " + marks + " " + phNo;
+    }
+}
+
+class SortByRollNo implements Comparator<Student> {
+    public int compare(Student s1, Student s2) {
+        if(s1.marks != s2.marks)
+            return Integer.compare(s1.marks, s2.marks);
+        return s1.name.compareTo(s2.name);
+    }
+}
+
+public class Main {
+	public static void main(String[] args) {
+		List<Student> arr = new ArrayList<>();
+		arr.add(new Student(1, "shan", "12345", 85));
+		arr.add(new Student(4, "zyx", "12345789", 80));
+		arr.add(new Student(2, "abc", "123", 80));
+		arr.add(new Student(3, "wert", "12345789", 70));
+		Collections.sort(arr, new SortByRollNo());
+		for(Student s: arr)
+		    System.out.println(s);
+	}
+}
