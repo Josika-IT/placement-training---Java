@@ -1,0 +1,15 @@
+import java.util.*;
+import java.io.*;
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		FileReader obj = new FileReader("demo.txt");
+		BufferedReader obj1 = new BufferedReader(obj);
+		String num = obj1.readLine();
+		while(num != null) {
+		    System.out.println(num);
+		    num = obj1.readLine();
+		}
+		obj.close();
+	}
+}
