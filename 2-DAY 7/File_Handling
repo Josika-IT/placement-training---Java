@@ -1,0 +1,12 @@
+mport java.util.*;
+import java.io.*;
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		FileWriter obj = new FileWriter("demo.txt");
+		obj.write("abcdef\n");
+		obj.write("shan\nertyuiolkmn");
+		obj.close();
+		System.out.println("created");
+	}
+}
