@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		List<String> arrLst=new ArrayList<>();
+		
+		int N=sc.nextInt();
+		for(int i=0;i<N;i++){
+		    String word = sc.next();
+		    arrLst.add(word);
+		    
+		}
+	TreeSet<String>result=new TreeSet<>(arrLst);
+		    System.out.println(result);
+		
+	}
+}
