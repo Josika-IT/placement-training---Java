@@ -1,0 +1,14 @@
+import java.util.*;
+import java.io.*;
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		FileReader obj = new FileReader("demo.txt");
+		int num = obj.read();
+		while(num != -1) {
+		    System.out.print((char)num);
+		    num = obj.read();
+		}
+		obj.close();
+	}
+}
